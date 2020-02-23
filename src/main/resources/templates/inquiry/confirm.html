@@ -6,7 +6,6 @@
 	</head>
 	<body>
 		<h1 th:text="${title}"></h1>
-		<p th:text="${inquiryForm.name}"></p>
 		<div th:object="${inquiryForm}">
 			<p th:text="*{name}"></p>
 			<p th:text="*{email}"></p>

@@ -36,12 +36,13 @@ public class InquiryController {
 		return "inquiry/confirm";
 	}
 
-	@PostMapping("/complete")
+	@PostMapping("complete")
 	public String complete(@Validated InquiryForm inquiryForm, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
 		if (result.hasErrors()) {
-			model.addAttribute("titile", "InquiryForm");
+			model.addAttribute("title", "inquriy form");
 			return "inquiry/form";
 		}
+		// セッションにデータが格納される
 		redirectAttributes.addFlashAttribute("complete", "Registered!");
 		return "redirect:/inquiry/form";
 	}
